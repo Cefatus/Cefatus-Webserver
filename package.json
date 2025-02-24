@@ -1,0 +1,12 @@
+{
+  "name": "cefatus-webserver",
+  "version": "1.0.0",
+  "description": "A server for Cefatus.com",
+  "main": "main.js",
+  "scripts": {
+    "main": "node main.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cef Cefatus",
+  "license": "ISC"
+}

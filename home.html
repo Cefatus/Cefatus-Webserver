@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cefatus VTuber - Research Facility</title>
+	</head>
+  <style>
+  body {
+    position : absolute;
+    font-size: 36px;
+    max-width: 600px;
+  }
+  </style>
+  <script>
+    // let aspectRatio = innerWidth / innerHeight;    
+        
+    window.onload = ()=>{
+      function getBodyWidth() {
+        let bodyWidthStyle = getComputedStyle(document.body).width;
+        let bodyWidth = bodyWidthStyle.replace('px','');
+        return Number(bodyWidth);
+      } 
+      
+      function recenterBody() {
+        let bodyWidth = getBodyWidth();    
+        
+        let intv = setInterval(()=>{
+          bodyWidth += getBodyWidth();
+          bodyWidth /= 2;
+        },10)
+        
+        setTimeout(()=>{
+          clearTimeout(intv)
+          let marginWidth = innerWidth - bodyWidth;
+              marginWidth = Math.ceil(bodyWidth)<580?
+                0:
+                (marginWidth/2);
+          document.body.style.margin = "0px " + marginWidth +"px";
+        },105)
+      }    
+      
+      recenterBody();
+      
+      document.body.onresize = ()=>{
+        recenterBody();
+      }
+    }
+  </script>
+	<body>
+		<h1> Welcome to Cefatus VTuber's Research Facility! </h1>
+    <p>I am Cef Cefatus, a magic researcher.</p>
+    <h2>Find Me:</h2>
+    <list>
+      <li><a href='https://www.youtube.com/@cefcephatus'>YouTube</a></li>
+      <li><a href='https://bsky.app/profile/cefcephatus.bsky.social'>Blue Sky Social</a></li>
+      <li><a href='https://x.com/CefCefatus'>XTwitter</a></li>
+      <li><a href='https://discord.gg/rfRBvZXkTc'>Discord Server</a></li>
+    </list>
+	</body>
+</html>
