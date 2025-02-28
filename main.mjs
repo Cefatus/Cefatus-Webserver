@@ -1,8 +1,7 @@
 // server.mjs
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
-
-const PORT = 80;
+const PORT = process.env.PORT;
 
 const server = createServer(async (req, res) => {
   try {
@@ -13,7 +12,7 @@ const server = createServer(async (req, res) => {
     //res.end('Hello World!\n');
     res.end(contents);
   } catch (err) {
-    console.error(error.message);
+    console.error(err.message);
   }
 });
 

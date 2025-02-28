@@ -11,8 +11,8 @@ ARG NODE_VERSION=22
 FROM node:${NODE_VERSION}-alpine
 
 # Use production node environment by default.
-ENV NODE_ENV=development
-
+ENV NODE_ENV=production
+ENV PORT=80
 
 WORKDIR /usr/src/app
 
@@ -32,7 +32,7 @@ USER node
 COPY . .
 
 # Expose the port that the application listens on.
-EXPOSE 8080
+EXPOSE 80
 
 # Run the application.
 CMD ["npm", "run", "main"]

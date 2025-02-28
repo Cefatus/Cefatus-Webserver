@@ -4,7 +4,8 @@
   "description": "A server for Cefatus.com",
   "main": "main.js",
   "scripts": {
-    "main": "node main.mjs",
+    "main": "node --env-file=.env main.mjs ",
+    "docker":"node main.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Cef Cefatus",

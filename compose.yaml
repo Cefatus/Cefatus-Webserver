@@ -12,7 +12,8 @@ services:
     build:
       context: .
     environment:
-      NODE_ENV: development
+      - NODE_ENV=production
+      - PORT=80
     ports:
       - 80:80
 
